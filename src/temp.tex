@@ -1,0 +1,114 @@
+\documentclass[12pt]{article}
+
+\usepackage[ngerman]{babel}
+\usepackage{hyphenat}
+\hyphenation{Mathe-matik wieder-gewinnen}
+\usepackage[shortlabels]{enumitem}
+\usepackage{flafter}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage[a4paper, margin=2.5cm, left=3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+\usepackage{mathpazo}
+\linespread{1.25}
+
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{marvosym}
+\usepackage{blkarray}
+\usepackage{booktabs}
+\usepackage{bigstrut}
+\usepackage{listings}
+\usepackage{lstmisc}
+\usepackage{wasysym}
+\usepackage{marginnote}
+\usepackage{amstex}
+\usepackage{polynom}
+\usepackage{ulem}
+\usepackage{cancel}
+\usepackage{tikz}
+
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+\def\C{\mathbb{C}}
+\def\K{\mathbb{K}}
+\def\F{\mathbb{F}}
+\def\E{\mathbb{E}}
+\def\bigO{\mathcal{O}}
+
+\renewcommand{\obar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1\right\rceil}
+\newcommand{\maxn}[1]{\norm{#1}S}
+\newcommand{\diffrac}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\Lim}[2]{\lim{#1 \rightarrow #2}}
+\newcommand{\Limin}[1]{\Lim{#1}{\infty}}
+\newcommand{\nset}[2]{[[1,, \dots,, #1]]}
+\newcommand{\scalProd}[2]{\left \langle #1;, #2 \right \rangle}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{keyword}{rgb}{0.55294118, 0.2745098, 1}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{keyword},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title {
+	\textbf{Modul}\\
+	[1ex] \large{
+		\textbf{Dokument}
+	}
+}
+
+\author{Autor}
+\date{\today}
+
+\fancyhead[L]{\textbf{\textsf{Modul}}}
+\fancyhead[R]{\textsf{Dokument}}
+
+\begin{document}
+	\addtocounter{page}{0}
+	\maketitle
+
+	\noindent\textbf{A: Titel}
+	\begin{enumerate}
+		\item
+		\begin{enumerate}
+			\item
+		\end{enumerate}
+
+		\item
+	\end{enumerate}
+\end{document}
