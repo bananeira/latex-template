@@ -1,3 +1,4 @@
+\PassOptionsToPackage{svgnames}{xcolor}
 \documentclass[12pt]{article}
 
 \usepackage[ngerman]{babel}
@@ -6,11 +7,12 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{flafter}
 \usepackage{microtype}
+\usepackage{tikz}
 \usepackage{xcolor}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
 
 \usepackage[a4paper, margin=2.5cm, left=3cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{tgpagella}
@@ -34,7 +36,6 @@
 \usepackage{polynom}
 \usepackage{ulem}
 \usepackage{cancel}
-\usepackage{tikz}
 
 \def\R{\mathbb{R}}
 \def\Z{\mathbb{Z}}
@@ -85,6 +86,19 @@
 
 \lstset{style=mystyle}
 
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{shadings,shadows}
+
+\newenvironment{clrblock}[1]{%
+	\tcolorbox[beamer,%
+		noparskip,breakable,
+		colback=LightCoral!20,colframe=DarkRed,%
+		colbacklower=Tomato!25!LightCoral,%
+		title=#1]}%
+	{\endtcolorbox}
+
 \title {
 	\textbf{Modul}\\
 	[1ex] \large{
@@ -96,7 +110,7 @@
 \date{\today}
 
 \fancyhead[L]{\textbf{\textsf{Modul}}}
-\fancyhead[R]{\textsf{Dokument}}
+\fancyhead[R]{\textsf{(Vorliegendes) Dokument}}
 
 \begin{document}
 	\addtocounter{page}{0}
