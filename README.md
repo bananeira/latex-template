@@ -41,8 +41,11 @@ This document class includes the following customizations:
   - Defining mathematical symbols for the sets `\R`, `\Z`, `\N`, `\Q`, `\C`, `\K`, and `\F`
   - Redefining the command `\obar` for creating overbars
   - Defining custom mathematical operations, such as `\norm`, `\abs`, `\floor`, `\ceil`, `\maxn`, `\diffrac`, and `\scalProd`
-  - Defining a custom clrblock environment for creating colored boxes with custom titles
-  - Source code formatting using the listings package
+  - Defining a custom `clrblock` environment for creating colored boxes with custom titles
+  - Source code formatting using the `listings` package (for code snippets)
+  - Page layout with 2.5cm margins and 3cm left margin, using the A4 paper size.
+  - Use of the `fancyhdr` package for page style.
+  - Use of the T1 and UTF-8 font encodings and the `TeX Gyre Pagella` and `Math Palatino` fonts
 
 ## Usage
 
