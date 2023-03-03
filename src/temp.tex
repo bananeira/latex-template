@@ -1,9 +1,11 @@
 \PassOptionsToPackage{svgnames}{xcolor}
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 
 \usepackage[ngerman]{babel}
 \usepackage{hyphenat}
 \hyphenation{Mathe-matik wieder-gewinnen}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
 \usepackage[shortlabels]{enumitem}
 \usepackage{flafter}
 \usepackage{microtype}
@@ -17,6 +19,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{tgpagella}
 \usepackage{mathpazo}
+\usepackage[sf, light]{merriweather}
 \linespread{1.25}
 
 \usepackage{mathtools}
@@ -36,6 +39,11 @@
 \usepackage{polynom}
 \usepackage{ulem}
 \usepackage{cancel}
+\usepackage{diagbox}
+\usepackage{makecell}
+\usepackage{epigraph}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations,calligraphy}
 
 \def\R{\mathbb{R}}
 \def\Z{\mathbb{Z}}
@@ -58,8 +66,17 @@
 \newcommand{\Limin}[1]{\Lim{#1}{\infty}}
 \newcommand{\nset}[2]{[[1,, \dots,, #1]]}
 \newcommand{\scalProd}[2]{\left \langle #1;, #2 \right \rangle}
+\newcommand{\task}[3]{\noindent\textsf{\textbf{Aufgabe #1}} \;\quad \textsf{#2}\\[4px] #3}
 
-\definecolor{codegreen}{rgb}{0,0.6,0}
+\newlength{\leftstackrelawd}
+\newlength{\leftstackrelbwd}
+\def\leftstackrel#1#2{\settowidth{\leftstackrelawd}%
+{${{}^{#1}}$}\settowidth{\leftstackrelbwd}{$#2$}%
+\addtolength{\leftstackrelawd}{-\leftstackrelbwd}%
+\leavevmode\ifthenelse{\lengthtest{\leftstackrelawd}}%
+{\kern-.5\leftstackrelawd}{}\mathrel{\mathop{#2}\limits^{#1}}}
+
+\definecolor{codered}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
@@ -67,7 +84,7 @@
 
 \lstdefinestyle{mystyle}{
 	backgroundcolor=\color{backcolour},
-	commentstyle=\color{codegreen},
+	commentstyle=\color{codered},
 	keywordstyle=\color{keyword},
 	numberstyle=\tiny\color{codegray},
 	stringstyle=\color{codepurple},
@@ -88,15 +105,36 @@
 
 \usepackage{tcolorbox}
 \usepackage{lipsum}
+\usepackage{color}
+\usepackage{blindtext}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{wrapfig}
 \tcbuselibrary{skins,breakable}
 \usetikzlibrary{shadings,shadows}
 
-\newenvironment{clrblock}[1]{%
-	\tcolorbox[beamer,%
+\newenvironment{definition}[1]{%
+	\tcolorbox[
+		noparskip,breakable,colframe=Gray!50,%
+		colbacklower=Tomato!25!LightCoral,%
+		coltitle=DarkRed,
+		title=Definition: #1]}%
+	{\endtcolorbox}
+
+\newenvironment{example}[1]{%
+	\tcolorbox[
+		noparskip,breakable,
+		colback=LightGreen!60,colframe=DarkGreen!85,%
+		colbacklower=LimeGreen!50!LightGreen!50,%
+		title=Beispiel: #1]}%
+	{\endtcolorbox}
+
+\newenvironment{remark}[1]{%
+	\tcolorbox[
 		noparskip,breakable,
 		colback=LightCoral!20,colframe=DarkRed,%
 		colbacklower=Tomato!25!LightCoral,%
-		title=#1]}%
+		title=Anmerkung: #1]}%
 	{\endtcolorbox}
 
 \title {
@@ -109,20 +147,19 @@
 \author{Autor}
 \date{\today}
 
-\fancyhead[L]{\textbf{\textsf{Modul}}}
-\fancyhead[R]{\textsf{(Vorliegendes) Dokument}}
+\fancyhead[L]{\textsf{\textbf{Dokument}}}
+\fancyhead[R]{\textsf{01-123 Modul}}
 
 \begin{document}
 	\addtocounter{page}{0}
 	\maketitle
 
-	\noindent\textbf{A: Titel}
-	\begin{enumerate}
-		\item
-		\begin{enumerate}
-			\item
-		\end{enumerate}
-
-		\item
-	\end{enumerate}
+	\noindent\textsf{\textbf{A: Abschnitt}}\\[8px]
+	\task{1.1}{Thema}{Aufgabenstellung}
+	\subtask{a}{Beschreibung der Aufgabe}
+	Lösung der Aufgabe
+	\\[8px]
+	\task{1.2}{Thema 2}{Aufgabenstellung 2}
+	\subtask{a}{Beschreibung der Aufgabe 2}
+	\par Lösung der Aufgabe 2
 \end{document}
